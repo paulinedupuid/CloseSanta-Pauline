@@ -8,13 +8,11 @@
 
 <%# top-message %>
 <div class=top-message-div>
-<h1 id="top-message">🎄 Choose your Santa<h1>
-<div class="bouton-index">
-<%= link_to "add yours!", new_offer_path, class:"pill pill-color"%>
+  <h1 id="top-message">🎄 Choose your Santa<h1>
+  <div class="bouton-index">
+    <%= link_to "add yours!", new_offer_path, class:"pill pill-color"%>
+  </div>
 </div>
-</div>
-
-
 
 <%# Content %>
 <div class="cards-content" id="column-small">
@@ -26,21 +24,19 @@
     <% number += 1%>
 
     <div class="card">
-    <%= link_to offer_path(offer) do %>
-
+      <%= link_to offer_path(offer) do %>
         <div class="card-img" style="background-image: url(<%= cl_image_path offer.photo.key, height: 250, width: 600, crop: :fill, gravity: :face %>);">
         </div>
-
-      <div class="btmcontent">
-        <div>
-          <h6><%= offer.title %></h6>
-          <h4 class="price">  <%= offer.price_per_hour %> €</h4>
+        <div class="btmcontent">
+          <div>
+            <h6><%= offer.title %></h6>
+            <h4 class="price">  <%= offer.price_per_hour %> €</h4>
+          </div>
+          <div class="btmcontent-right">
+            <h6><%= offer.availability %><h6> <h6><%= offer.location%><h6>
+          </div>
         </div>
-        <div class="btmcontent-right">
-          <h6><%= offer.availability %><h6> <h6><%= offer.location%><h6>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>

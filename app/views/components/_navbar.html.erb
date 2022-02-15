@@ -31,10 +31,10 @@
       <div class="navbar-btn-flex">
       <%# 🟡 inscription ---------------------- %>
       <%= link_to new_user_registration_path do %>
-      <h2 class="pill pill-color">Créer un compte</h2>
+      <h2 class="pill pill-color">Sign up</h2>
       <%# 🟡 login ---------------------------- %>
       <%= link_to user_session_path do %>
-      <h2 class="pill pill-color-white left-pill-margin">👤 Se connecter</h2>
+      <h2 class="pill pill-color-white left-pill-margin">👤 Login</h2>
       <% end %>
       <% end %>
       </div>
@@ -43,7 +43,7 @@
       <div class="navbar-btn-flex">
       <%# 🟡 log-out ---------------------------- %>
       <%= link_to destroy_user_session_path, :method => :delete do %>
-      <h2 class="pill pill-color-white">log-out</h2>
+      <h2 class="pill pill-color-white">Log-out</h2>
       <%# 🟡 dashboard ---------------------------- %>
       <%= link_to dashboard_offers_path do %>
       <h2 class="pill pill-color left-pill-margin"> <%= current_user.firstname %> <%=is_santa%> </h2>
