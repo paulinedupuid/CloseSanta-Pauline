@@ -20,13 +20,16 @@ User.destroy_all
 # Users
 
 puts "-----user creation-----"
-johndoe = User.create!(firstname: "John", lastname: "Doe", email: "johndoe@yahoo.fr", password: "123456")
-paulmaccartney = User.create!(firstname: "Paul", lastname: "MacCartney", email: "paulmaccartney@lycos.org",
-                              password: "123456")
-lennon = User.create!(firstname: "John", lastname: "Lennon", email: "johnlennon@gmail.com", password: "123456")
-mathilda = User.create!(firstname: "Mathilda", lastname: "Sorich", email: "mathildanana@hotmail.fr", password: "123456")
-romeo = User.create!(firstname: "Romeo", lastname: "Montaigu", email: "romeromontacru@hotmail.fr", password: "123456")
-santa = User.create!(firstname: "Santa", lastname: "Clause", email: "santaclause@google.lap", password: "123456")
+billmay = User.create!(firstname: "Bill", lastname: "May", email: "bill.may@yahoo.fr", password: "bm937501")
+maryyoung = User.create!(firstname: "Mary", lastname: "Young", email: "mary.young@lycos.org", password: "my264053")
+isobelbird = User.create!(firstname: "Isobel", lastname: "Bird", email: "isobel.bird@gmail.com", password: "ib618305")
+santaclaus = User.create!(firstname: "Santa", lastname: "Claus", email: "santaclaus@google.lap", password: "sc241277")
+emmamathison = User.create!(firstname: "Emma", lastname: "Mathison", email: "emma.mathison@yahoo.fr", password: "em453062")
+carriebrody = User.create!(firstname: "Carrie", lastname: "Brody", email: "carrie.brody@hotmail.fr", password: "cb037482")
+johnridan = User.create!(firstname: "John", lastname: "Ridan", email: "john.ridan@lycos.org", password: "jr154937")
+paulbyron = User.create!(firstname: "Paul", lastname: "Byron", email: "paul.byron@gmail.com", password: "pb638274")
+mathildasorich = User.create!(firstname: "Mathilda", lastname: "Sorich", email: "mathilda.sorich@hotmail.fr", password: "ms715043")
+timroberts = User.create!(firstname: "Tim", lastname: "Roberts", email: "tim.roberts@hotmail.fr", password: "tr064823")
 
 
 puts "-----user created-----"
@@ -35,91 +38,87 @@ puts "-----user created-----"
 
 puts "-----offer creation-----"
 
-image1 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639578231/development/nmxcoqy7rp1v84whnviabbivzf5n.jpg')
-offers1 = Offer.new(location: "Nice", availability: Date.new(2021, 12, 24), price_per_hour: 80,
-                    offer_description: "the best santa in Nice and around, go throw your chimney,
-                    say HohoHo like nobody and adorable with the childrens",
+image1 = URI.open('https://images.pexels.com/photos/716658/pexels-photo-716658.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers1 = Offer.new(location: "Marseille", availability: Date.new(2022, 12, 24), price_per_hour: 80,
+                    offer_description: "The best santa in Marseille and around, I go throw your chimney,
+                    I say HohoHo like nobody and I am adorable with the childrens",
                     title: "The best Santa of Cote d'Azur",
-                    santa_description: "natural belly, beautifull beard, quality costume and I come with
-                    my own reindeer ")
-offers1.user = johndoe
-offers1.photo.attach(io: image1, filename: 'johndoepic', content_type: 'image/jpg')
+                    santa_description: "Natural belly, beautifull beard, quality costume and I come with
+                    my own reindeer")
+offers1.user = billmay
+offers1.photo.attach(io: image1, filename: 'offer1', content_type: 'image/jpg')
 offers1.save!
 
-image2 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639751069/development/santa2_tgitli.jpg')
-offers2 = Offer.new(location: "Cannes", availability: Date.new(2021, 12, 20), price_per_hour: 60,
-                    offer_description: "If you need a good santa in Cannes, don't look further, I'm graduate from
-                    the Santa school, clean, kind, and I had for you a great show.",
+image2 = URI.open('https://images.pexels.com/photos/2752099/pexels-photo-2752099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers2 = Offer.new(location: "Cannes", availability: Date.new(2022, 12, 20), price_per_hour: 60,
+                    offer_description: "If you need a good santa in Cannes, don't look further, I graduated from
+                    the Santa school, clean, kind, and I have a great show prepared for you",
                     title: "Santa in Cannes",
-                    santa_description: "gratuated from santa school, natural beard, 6 year of experience and a guarantee
-                    for your enjoyement, just choose the good santa. ")
-offers2.user = paulmaccartney
-offers2.photo.attach(io: image2, filename: 'paulpic', content_type: 'image/jpg')
+                    santa_description: "Gratuated from santa school, 6 years of experience, I am the right choice for your entertainement!")
+offers2.user = maryyoung
+offers2.photo.attach(io: image2, filename: 'offer2', content_type: 'image/jpg')
 offers2.save!
 
-image3 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639580337/development/paul_cyeqep.jpg')
-offers3 = Offer.new(location: "Cannes", availability: Date.new(2021, 12, 25), price_per_hour: 90,
-                    offer_description: "I can come for your christmas day to give your gift to your child, make their
-                    christmas be a real and magical experience.",
+image3 = URI.open('https://images.pexels.com/photos/298824/pexels-photo-298824.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers3 = Offer.new(location: "Cannes", availability: Date.new(2022, 12, 25), price_per_hour: 90,
+                    offer_description: "I can come for your christmas day to give gifts to your children and make their
+                    christmas a real and magical experience.",
                     title: "Santa for christmas",
-                    santa_description: "gratuated from santa school, natural beard, 6 year of experience and a guarantee
-                    for your enjoyement, just choose the good santa. ")
-offers3.user = paulmaccartney
-offers3.photo.attach(io: image3, filename: 'paulpic', content_type: 'image/jpg')
+                    santa_description: "Several years of experience as a Santa.")
+offers3.user = isobelbird
+offers3.photo.attach(io: image3, filename: 'offer3', content_type: 'image/jpg')
 offers3.save!
 
-image4 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639580336/development/romeo_f6n1wk.jpg')
-offers4 = Offer.new(location: "Marseille", availability: Date.new(2021, 12, 16), price_per_hour: 60,
-                    offer_description: "You search a Santa for your christmas and I'm the older Santa of Marseille,
-                    30 years of experience, sober, clean, I can take care of the wish of your familly !",
+image4 = URI.open('https://images.pexels.com/photos/1654961/pexels-photo-1654961.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers4 = Offer.new(location: "Marseille", availability: Date.new(2022, 12, 16), price_per_hour: 60,
+                    offer_description: "You are looking for a Santa for your christmas? I'm the older Santa of Marseille,
+                    30 years of experience, I can take make your familly Christmas dreams come true!",
                     title: "Massilia Santa",
-                    santa_description: "Santa of Massilia, the must of the cannebiere, I can bring the magic in your
-                    christmas time.")
-offers4.user = lennon
-offers4.photo.attach(io: image4, filename: 'lennonpic', content_type: 'image/jpg')
+                    santa_description: "Santa of Massilia, the best in the city, I can bring the magic of
+                    Christmas time to your family.")
+offers4.user = emmamathison
+offers4.photo.attach(io: image4, filename: 'offer4', content_type: 'image/jpg')
 offers4.save!
 
 
-image5 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639580336/development/lennon_zbmwbz.jpg')
-offers5 = Offer.new(location: "Marseille", availability: Date.new(2021, 12, 23), price_per_hour: 90,
-                    offer_description: "Christmas approach, bring a magical gift to your childs with this unique
+image5 = URI.open('https://images.pexels.com/photos/1556679/pexels-photo-1556679.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers5 = Offer.new(location: "Cannes", availability: Date.new(2022, 12, 23), price_per_hour: 90,
+                    offer_description: "Christmas is on its way, bring a magical gift to your children with this unique
                     experience.",
-                    title: "Massilia Santa for holidays",
-                    santa_description: "Santa of Massilia, the must of the cannebiere, I can bring the magic in your
-                    christmas time.")
-offers5.user = lennon
-offers5.photo.attach(io: image5, filename: 'lennonpic', content_type: 'image/jpg')
+                    title: "The best Santa for your holidays",
+                    santa_description: "Make all your children dreams come true for Christmas!")
+offers5.user = carriebrody
+offers5.photo.attach(io: image5, filename: 'offer5', content_type: 'image/jpg')
 offers5.save!
 
-image6 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639750905/development/santa-in-a-hot-tub-2_nreyxt.jpg')
-offers6 = Offer.new(location: "Marseille", availability: Date.new(2021, 12, 31), price_per_hour: 80,
-                    offer_description: "What is best than a Santa for your Christmas ? Santa Claus can be here to your
-                    new year, for particular, enterprise, bring some christmas magic after christmas and enjoy your
-                    holidays.",
-                    title: "Santa for your 'Reveillon'",
+image6 = URI.open('https://images.pexels.com/photos/3149902/pexels-photo-3149902.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers6 = Offer.new(location: "Nice", availability: Date.new(2022, 12, 31), price_per_hour: 80,
+                    offer_description: "What is best than a Santa for your Christmas ? Santa Claus for
+                    new year's eve! Bring some christmas magic after christmas and enjoy your holidays!",
+                    title: "Santa for your New Year's eve!",
                     santa_description: "30 years fo experience, gratuated of the Santa school, professionnal,
                     I guarantee you the best prestation.")
-offers6.user = lennon
-offers6.photo.attach(io: image6, filename: 'lennonpic', content_type: 'image/jpg')
+offers6.user = johnridan
+offers6.photo.attach(io: image6, filename: 'offer6', content_type: 'image/jpg')
 offers6.save!
 
-image7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639750959/development/hot-santa_hyc8by.jpg')
-offers7 = Offer.new(location: "Nice", availability: Date.new(2021, 12, 18), price_per_hour: 70,
+image7 = URI.open('https://images.pexels.com/photos/133640/pexels-photo-133640.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+offers7 = Offer.new(location: "Nice", availability: Date.new(2022, 12, 18), price_per_hour: 70,
                     offer_description: "On your holiday, choose the perfect Santa Claus to enjoy christmas time",
                     title: "Nice Santa",
                     santa_description: "A hot chocolate and a hot santa, the best Christmas combination.")
-offers7.user = romeo
-offers7.photo.attach(io: image7, filename: 'romeopic', content_type: 'image/jpg')
+offers7.user = paulbyron
+offers7.photo.attach(io: image7, filename: 'offer7', content_type: 'image/jpg')
 offers7.save!
 
-image8 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/v1639580336/development/santa_nippsl.jpg')
+image8 = URI.open('https://images.pexels.com/photos/247891/pexels-photo-247891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 offers8 = Offer.new(location: "France", availability: Date.new(2021, 12, 21), price_per_hour: 0,
-                    offer_description: "Ho HO Ho it's almost christmas, don't forget to be a good child and make your
+                    offer_description: "Ho HO Ho it's almost christmas, don't forget to be a good child and make write
                     wishlist.",
                     title: "The real Santa",
-                    santa_description: "Since a long time, I bring joy to all the childs in the world.")
-offers8.user = santa
-offers8.photo.attach(io: image8, filename: 'romeopic', content_type: 'image/jpg')
+                    santa_description: "Since the dawn of time, I bring joy to all the children in the world.")
+offers8.user = santaclaus
+offers8.photo.attach(io: image8, filename: 'offer8', content_type: 'image/jpg')
 offers8.save!
 
 puts "-----offer created-----"
@@ -129,20 +128,20 @@ puts "-----offer created-----"
 puts "-----reservation creation-----"
 
 reservation1 = Reservation.new(event_adress: "27 avenue Thiers, Nice", status: "pending", reservation_start:
-                              Time.new(2021, 12, 23, 8, 24, 45), reservation_end: Time.new(2021, 12, 23, 10, 24, 45))
-reservation1.user = lennon
+                              Time.new(2022, 12, 23, 8, 24, 45), reservation_end: Time.new(2022, 12, 23, 10, 24, 45))
+reservation1.user = mathildasorich
 reservation1.offer = offers1
 reservation1.save!
 
 reservation2 = Reservation.new(event_adress: "30 Rue Henri Paschke, Cannes", status: "pending", reservation_start:
-  Time.new(2021, 12, 25, 9, 30), reservation_end: Time.new(2021, 12, 25, 10, 30))
-reservation2.user = lennon
+  Time.new(2022, 12, 25, 9, 30), reservation_end: Time.new(2022, 12, 25, 10, 30))
+reservation2.user = timroberts
 reservation2.offer = offers3
 reservation2.save!
 
 reservation2 = Reservation.new(event_adress: "12 Rue de la liberté, Nice", status: "pending", reservation_start:
-  Time.new(2021, 12, 22, 22, 30), reservation_end: Time.new(2021, 12, 22, 23, 45))
-reservation2.user = mathilda
+  Time.new(2022, 12, 22, 22, 30), reservation_end: Time.new(2022, 12, 22, 23, 45))
+reservation2.user = mathildasorich
 reservation2.offer = offers7
 reservation2.save!
 
