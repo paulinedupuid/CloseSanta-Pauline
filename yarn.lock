@@ -6097,7 +6097,7 @@ sockjs-client@^1.5.0:
     faye-websocket "^0.11.3"
     inherits "^2.0.4"
     json3 "^3.3.3"
-    url-parse "^1.5.3"
+    url-parse "^1.5.9"
 
 sockjs@^0.3.21:
   version "0.3.24"
